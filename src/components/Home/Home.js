@@ -4,7 +4,7 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <div className='container mt-3 rounded-3'>
+    <div className='container mt-3 rounded-3 home'>
       <div className='row cols-1 row-cols-lg-2'>
         <div className='col p-5'>
           <h1 className='py-4'>Consult a doctor <br /> anytime,anywhere  <br /> by <span className='text-danger'>Video Call</span></h1>
@@ -18,10 +18,12 @@ const Home = () => {
       {/* OUR FEATURS section */}
       <div>
         <p className='text-center mt-5'>OUR FEATURS</p>
-         <h1 className='text-center'>WE Believe that We can Save <br />More Lifes With you</h1>
+         <h1 className='text-center mb-5'>WE Believe that We can Save <br />More Lifes With you</h1>
          <div>
-            <div className='row'>
-              <div></div>
+            <div className='row mt-5'>
+              <div className='col'>1</div>
+              <div className='col'>2</div>
+              <div className='col'>3</div>
             </div>
          </div>
       </div>
