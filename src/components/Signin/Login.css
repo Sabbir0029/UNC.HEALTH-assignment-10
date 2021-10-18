@@ -1,0 +1,11 @@
+.page{
+  height: 100vh;
+  background-color: #ecf0f3;
+}
+.login{
+  background-color: #ecf0f3;
+  width: 400px;
+  height: 500px;
+  border-radius: 15px;
+  box-shadow:10px 10px 10px  #cbced1, -10px -10px 15px white;
+}
