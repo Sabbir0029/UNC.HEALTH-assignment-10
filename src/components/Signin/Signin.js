@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 import img from '../../img/google-1088004_960_720.png';
 import img2 from '../../img/GitHub-logo.png';
+import UseAuth from '../../hooks/UseAuth';
 
 
 
 const Signin = () => {
+  const {googlelognin} = UseAuth();
   return (
     <div className='d-flex justify-content-center align-items-center page'>
       <div className='mt-5 p-5 login'>
@@ -33,10 +35,10 @@ const Signin = () => {
          </Button>
        </Form>
        <div className='text-center p-2 google'>
-         <img src={img} alt="" />
+         <img onClick={googlelognin} src={img} alt="" />
          <img src={img2} alt="" />
        </div>
-       <p className='text-center'>.........New to Amazon?.........</p>
+       <p className='text-center'>.........New to UNC.HEALTH?.........</p>
        <p className='text-center'> <Link to='/Signup'>Create you a Account</Link></p>
       </div>
     </div>

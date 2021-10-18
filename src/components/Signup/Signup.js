@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Signup.css'
+import './Signup.css';
 
 const Signup = () => {
+  
   return (
     <div className='d-flex justify-content-center align-items-center page'>
       <div className='mt-5 p-5 signup'>
@@ -28,8 +29,7 @@ const Signup = () => {
            Submit
          </Button>
        </Form>
-       <p className='text-center'>.....New to Amazon?.....</p>
-       <p className='text-center'>Already have an account <Link to='/Login'>Login</Link></p>
+       <p className='text-center pt-3'>Already have an account <Link to='/Login'>Login</Link></p>
       </div>
     </div>
   );

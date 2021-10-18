@@ -6,12 +6,14 @@ import NotFound from './components/NotFound/NotFound';
 import Services from './components/Services/Services';
 import Signin from './components/Signin/Signin';
 import Signup from './components/Signup/Signup';
+import AuthProvider from './context/AuthProvider/AuthProvider';
 import Footer from './sharing/Footer/Footer';
 import Header from './sharing/Header/Header';
 
 function App() {
   return (
     <div>
+      <AuthProvider>
       <BrowserRouter>
       <Header></Header>
       <Switch>
@@ -39,6 +41,7 @@ function App() {
       </Switch>
       <Footer></Footer>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
