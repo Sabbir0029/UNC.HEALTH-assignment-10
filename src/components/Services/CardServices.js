@@ -12,7 +12,7 @@ const CardServices = (props) => {
         <Card.Body>
           <Card.Title>Name : {titel}</Card.Title>
           <Card.Text>price : {price}</Card.Text>
-          <Link to={`/Appointment/${id}`}>
+          <Link to={`/Appointment/${titel}`}>
           <Button>Appointment</Button>
           </Link>
         </Card.Body>
