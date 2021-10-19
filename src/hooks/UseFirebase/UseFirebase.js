@@ -6,6 +6,7 @@ initialize()
 const UseFirebase = () => {
 
   const [user, setUser] = useState({});
+  const [gemail, setEmail] = useState('');
   const [loading, setLoading] = useState(true);
   const auth = getAuth();
   // google login section
@@ -49,6 +50,7 @@ const UseFirebase = () => {
   return {
     user,
     loading,
+    gemail,
     googlelognin,
     logOut,
     githublogin,

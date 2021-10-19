@@ -3,6 +3,7 @@ import './App.css';
 import Appointment from './components/Appointment/Appointment';
 import Blog from './components/Blog/Blog';
 import ContractUs from './components/ContractUs/ContractUs';
+import About from './components/Home/About';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import PricateRoute from './components/PricateRoute/PricateRoute';

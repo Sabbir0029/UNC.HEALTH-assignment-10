@@ -18,6 +18,7 @@ const Header = () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
         <Nav.Link className='text-light' as={Link} to="/home">Home</Nav.Link>
+        <Nav.Link className='text-light' as={Link} to="/home">About us</Nav.Link>
         <Nav.Link className='text-light' as={Link} to="/Services">Services</Nav.Link>
         <Nav.Link className='text-light' as={Link} to="/Appointment">Appointments</Nav.Link>
         <Nav.Link className='text-light' as={Link} to="/Contract">ContractUs</Nav.Link>
@@ -30,7 +31,7 @@ const Header = () => {
           <Navbar.Text>
             <div className='d-flex photo'>
             {user?.displayName?
-            <img src={user.photoURL} className=' ms-3 rounded-circle' alt="photo" />:
+      <img src={user.photoURL} className=' ms-3 rounded-circle'/>:
             <h4 className='ms-3'>{element}</h4>
             }
             <p className='text-light text-decoration-none mt-3 ms-3'>{user.displayName}</p>
