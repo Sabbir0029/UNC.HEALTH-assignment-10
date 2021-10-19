@@ -1,8 +1,9 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import PricateRoute from './components/PricateRoute/PricateRoute';
 import Services from './components/Services/Services';
 import Signin from './components/Signin/Signin';
 import Signup from './components/Signup/Signup';
@@ -23,9 +24,9 @@ function App() {
         <Route path='/Home'>
           <Home></Home>
         </Route>
-        <Route path='/Services'>
+        <PricateRoute path='/Services'>
           <Services></Services>
-        </Route>
+        </PricateRoute>
         <Route path='/blog'>
           <Blog></Blog>
         </Route>

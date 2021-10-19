@@ -9,7 +9,8 @@ import UseAuth from '../../hooks/UseAuth';
 
 
 const Signin = () => {
-  const {googlelognin} = UseAuth();
+  const {googlelognin,githublogin} = UseAuth();
+  console.log(githublogin);
   return (
     <div className='d-flex justify-content-center align-items-center page'>
       <div className='mt-5 p-5 login'>
@@ -36,7 +37,7 @@ const Signin = () => {
        </Form>
        <div className='text-center p-2 google'>
          <img onClick={googlelognin} src={img} alt="" />
-         <img src={img2} alt="" />
+         <img onClick={githublogin} src={img2} alt="" />
        </div>
        <p className='text-center'>.........New to UNC.HEALTH?.........</p>
        <p className='text-center'> <Link to='/Signup'>Create you a Account</Link></p>
