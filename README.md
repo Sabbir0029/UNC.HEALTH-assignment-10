@@ -5,7 +5,7 @@ Firebase live site link (https://unc-health.web.app/home)
 ## Header
 
 The header is on the page.
-1.Home
+<li>Home</li>
 2.About us
 3.Services
 4.Appointments
