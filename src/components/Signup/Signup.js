@@ -25,7 +25,7 @@ const Signup = () => {
          <Form.Group className="mb-3" controlId="formBasicCheckbox">
          </Form.Group>
          <Button variant="primary" type="submit">
-           Submit
+         Registration
          </Button>
        </Form>
        <p className='text-center pt-3'>Already have an account <Link to='/Login'>Login</Link></p>
