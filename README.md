@@ -6,15 +6,16 @@ Firebase live site link (https://unc-health.web.app/home)
 
 The header is on the page.
 <li>Home</li>
-2.About us
-3.Services
-4.Appointments
-5.Contract us
-6.Blog
+<li>About us</li>
+<li>Services</li>
+<li>Appointments</li>
+<li>Contract us</li>
+<li>Blog</li>
+
 
 There are also tow button
-1.Registrtion
-2.Login
+<li>Registrtion</li>
+<li>Login</li>
 
 And the name of the website : unc.health,
 
