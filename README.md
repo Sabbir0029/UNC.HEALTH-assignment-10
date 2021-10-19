@@ -1,6 +1,11 @@
 # Name : UNC.HEALTH
 
 Firebase live site link (https://unc-health.web.app/home)
+## Pricate Route :
+
+<li>Services</li>
+<li>Appointments</li>
+
 
 ## Header
 
