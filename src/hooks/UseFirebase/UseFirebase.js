@@ -12,11 +12,7 @@ const UseFirebase = () => {
   const googlelognin =() =>{
     setLoading(true);
     const googleprovider = new GoogleAuthProvider();
-    signInWithPopup(auth, googleprovider)
-    .then(result =>{
-      setUser(result.user);
-    })
-    .finally(() => setLoading(false));
+    return signInWithPopup(auth, googleprovider);
   };
   // github login section
   const githublogin =()=>{

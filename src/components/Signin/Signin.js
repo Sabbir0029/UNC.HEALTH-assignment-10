@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import './Login.css';
 import img from '../../img/google-1088004_960_720.png';
 import img2 from '../../img/GitHub-logo.png';
@@ -10,7 +10,17 @@ import UseAuth from '../../hooks/UseAuth';
 
 const Signin = () => {
   const {googlelognin,githublogin} = UseAuth();
-  console.log(githublogin);
+  const location = useLocation()
+  const history = useHistory()
+  const location_url = location.state?.from || '/';
+  
+
+  const googleBtn =()=>{
+    googlelognin()
+    .then(result =>{
+      history.push(location_url)
+    })
+  }
   return (
     <div className='d-flex justify-content-center align-items-center page'>
       <div className='mt-5 p-5 login'>
@@ -36,7 +46,7 @@ const Signin = () => {
          </Button>
        </Form>
        <div className='text-center p-2 google'>
-         <img onClick={googlelognin} src={img} alt="" />
+         <img onClick={googleBtn} src={img} alt="" />
          <img onClick={githublogin} src={img2} alt="" />
        </div>
        <p className='text-center'>.........New to UNC.HEALTH?.........</p>

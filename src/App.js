@@ -1,6 +1,8 @@
 import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import './App.css';
+import Appointment from './components/Appointment/Appointment';
 import Blog from './components/Blog/Blog';
+import ContractUs from './components/ContractUs/ContractUs';
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import PricateRoute from './components/PricateRoute/PricateRoute';
@@ -27,6 +29,15 @@ function App() {
         <PricateRoute path='/Services'>
           <Services></Services>
         </PricateRoute>
+        <PricateRoute path='/Appointment/:AppointmentId'>
+          <Appointment></Appointment>
+        </PricateRoute>
+        <PricateRoute path='/Appointment'>
+          <Appointment></Appointment>
+        </PricateRoute>
+        <Route path='/Contract'>
+          <ContractUs></ContractUs>
+        </Route>
         <Route path='/blog'>
           <Blog></Blog>
         </Route>

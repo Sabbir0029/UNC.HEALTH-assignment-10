@@ -19,8 +19,8 @@ const Footer = () => {
         <div className='col'>
           <h4>Quick Link</h4>
           <Link className='text-decoration-none text-dark' to='/about'>About</Link><br />
-          <Link className='text-decoration-none text-dark' to='/contart'>Contart</Link><br />
-          <Link className='text-decoration-none text-dark' to='/Appointments'>Appointments</Link><br />
+          <Link className='text-decoration-none text-dark' to='/Contract'>Contart</Link><br />
+          <Link className='text-decoration-none text-dark' to='/Appointment'>Appointments</Link><br />
           <Link className='text-decoration-none text-dark' to='/Blog'>Blog</Link>
         </div>
         <div className='col'>
