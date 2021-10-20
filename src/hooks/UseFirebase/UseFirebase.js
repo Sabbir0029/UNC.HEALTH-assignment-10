@@ -7,9 +7,10 @@ const UseFirebase = () => {
 
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
-  // 
+  // email and password
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   // 
   const auth = getAuth();
   // google login section
@@ -50,7 +51,7 @@ const UseFirebase = () => {
       .finally(() => setLoading(false));
   }
 
-  // jhgfsdfskdf
+  // Email and password
   const handleEmail = e =>{
     setEmail(e.target.value);
   }
@@ -60,18 +61,28 @@ const UseFirebase = () => {
   }
 
   const submitBtn = e =>{
+    e.preventDefault();
+    if(password.length < 6){
+      setError('Password should be at least 6 characters');
+      return;
+    }
       createUserWithEmailAndPassword(auth, email, password)
       .then(result =>{
         const user = result.user;
         console.log(user);
+        setError(' ')
       })
-      e.preventDefault();
+      .catch(error =>{
+        setError(error.message);
+      })
+      
   }
 
   return {
     user,
     loading,
     email,
+    error,
     googlelognin,
     logOut,
     githublogin,
