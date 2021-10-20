@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut,onAuthStateChanged, GithubAuthProvider,  createUserWithEmailAndPassword  } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut,onAuthStateChanged, GithubAuthProvider,  createUserWithEmailAndPassword,signInWithEmailAndPassword  } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initialize from '../../components/firebaseConfig/initialize';
 
@@ -11,15 +11,16 @@ const UseFirebase = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [name, setName] = useState('')
   // 
   const auth = getAuth();
-  // google login section
+  // google login function
   const googlelognin =() =>{
     setLoading(true);
     const googleprovider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleprovider);
   };
-  // github login section
+  // github login function
   const githublogin =()=>{
     const githubprovider = new GithubAuthProvider();
     signInWithPopup(auth, githubprovider)
@@ -30,7 +31,7 @@ const UseFirebase = () => {
       const email = error.email;
     });
   }
-  // onAuthStateChanged section
+  // onAuthStateChanged function
   useEffect(()=>{
     const Changed= onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -43,7 +44,7 @@ const UseFirebase = () => {
     });
     return () => Changed;
   },[]);
-    // Logout section
+    // Logout function
   const logOut =()=>{
     setLoading(true);
       signOut(auth)
@@ -54,6 +55,10 @@ const UseFirebase = () => {
   // Email and password
   const handleEmail = e =>{
     setEmail(e.target.value);
+  }
+
+  const handleName = e =>{
+    setName(e.target.value);
   }
 
   const handlePassword = e=>{
@@ -74,8 +79,14 @@ const UseFirebase = () => {
       })
       .catch(error =>{
         setError(error.message);
-      })
-      
+      });
+      // login function
+      // signInWithEmailAndPassword(auth, email, password)
+      // .then(result => {
+      //   const user = result.user
+      //   console.log(user);
+      //   setError(' ')
+      // })
   }
 
   return {
@@ -87,6 +98,7 @@ const UseFirebase = () => {
     logOut,
     githublogin,
     handleEmail,
+    handleName,
     handlePassword,
     submitBtn,
   }

@@ -4,7 +4,7 @@ import UseAuth from '../../hooks/UseAuth';
 import './Signup.css';
 
 const Signup = () => {
-   const { handleEmail,handlePassword,submitBtn,error} = UseAuth();
+   const { handleEmail,handlePassword,submitBtn,error,handleName} = UseAuth();
   return (
     <div className='d-flex justify-content-center align-items-center page'>
       <div className='mt-5 p-5 signup'>
@@ -13,7 +13,7 @@ const Signup = () => {
          <Form.Group className="mb-3" controlId="formBasicEmail">
          <Form.Group className="mb-3" controlId="formBasicPassword">
            <Form.Label>Your Name </Form.Label>
-           <Form.Control type="text" placeholder="Full Name" />
+           <Form.Control onBlur={handleName} type="text" placeholder="Full Name" />
          </Form.Group>
            <Form.Label>Email address</Form.Label>
            <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />

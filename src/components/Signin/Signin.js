@@ -9,12 +9,10 @@ import UseAuth from '../../hooks/UseAuth';
 
 
 const Signin = () => {
-  const {googlelognin, githublogin} = UseAuth();
+  const {googlelognin, githublogin,submitBtn,handlePassword,handleEmail} = UseAuth();
   const location = useLocation()
   const history = useHistory()
   const location_url = location.state?.from || '/';
-
-  
 
   const googleBtn =()=>{
     googlelognin()
@@ -26,15 +24,15 @@ const Signin = () => {
     <div className='d-flex justify-content-center align-items-center page'>
       <div className='mt-5 p-5 login'>
       <h1>Please Login in</h1>
-      <form>
+      <form onSubmit={submitBtn}>
          <div className="mb-3">
            <label htmlfor="exampleInputEmail1" className="form-label">Email address</label>
-           <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+           <input onBlur={handleEmail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
          </div>
          <div className="mb-3">
            <label htmlfor="exampleInputPassword1" className="form-label">Password</label>
-           <input type="password" className="form-control" id="exampleInputPassword1" required/>
+           <input onBlur={handlePassword} type="password" className="form-control" id="exampleInputPassword1" required/>
          </div>
          <button type="submit" className="btn btn-primary">Login</button>
        </form>
