@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut,onAuthStateChanged, GithubAuthProvider  } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut,onAuthStateChanged, GithubAuthProvider,  createUserWithEmailAndPassword  } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initialize from '../../components/firebaseConfig/initialize';
 
@@ -6,8 +6,11 @@ initialize()
 const UseFirebase = () => {
 
   const [user, setUser] = useState({});
-  const [gemail, setEmail] = useState('');
   const [loading, setLoading] = useState(true);
+  // 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // 
   const auth = getAuth();
   // google login section
   const googlelognin =() =>{
@@ -47,13 +50,34 @@ const UseFirebase = () => {
       .finally(() => setLoading(false));
   }
 
+  // jhgfsdfskdf
+  const handleEmail = e =>{
+    setEmail(e.target.value);
+  }
+
+  const handlePassword = e=>{
+    setPassword(e.target.value);
+  }
+
+  const submitBtn = e =>{
+      createUserWithEmailAndPassword(auth, email, password)
+      .then(result =>{
+        const user = result.user;
+        console.log(user);
+      })
+      e.preventDefault();
+  }
+
   return {
     user,
     loading,
-    gemail,
+    email,
     googlelognin,
     logOut,
     githublogin,
+    handleEmail,
+    handlePassword,
+    submitBtn,
   }
 };
 
